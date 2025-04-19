@@ -1,0 +1,25 @@
+ipeline {
+    agent any
+
+parameters { string(name: 'BranchName', defaultValue: 'master', description: 'Enter a branch name') }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Hi'){
+            steps{
+                echo 'Hi'
+            }
+        }
+        stage('Git checkout'){
+            steps{
+                git branch: 'BranchName', changelog: false, credentialsId: 'devops-coding-credentials', poll: false, url: 'https://github.com/Dadah3227/devops-coding.git'
+                sh 'ls -ltr' // linux shell script
+             // bat 'dir' //windows
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+parameters { string(name: 'BranchName', defaultValue: 'master', description: 'Enter a branch name') }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Hi'){
+            steps{
+                echo 'Hi'
+            }
+        }
+        stage('Git checkout'){
+            steps{
+                git branch: '$BranchName', git changelog: false, credentialsId: 'pipe-line-branch-trial', poll: false, url: 'https://github.com/Dadah3227/python-coding.git'
+                sh 'ls -ltr' // Linux
+             // bat 'dir' //windows
+            }
+        }
+    }
+}

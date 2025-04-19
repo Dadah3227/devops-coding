@@ -16,7 +16,7 @@ parameters { string(name: 'BranchName', defaultValue: 'master', description: 'En
         }
         stage('Git checkout'){
             steps{
-                git branch: '$BranchName', git changelog: false, credentialsId: 'pipe-line-branch-trial', poll: false, url: 'https://github.com/Dadah3227/python-coding.git'
+                git branch: 'BranchName', changelog: false, credentialsId: 'devops-coding-credentials', poll: false, url: 'https://github.com/Dadah3227/devops-coding.git'
                 sh 'ls -ltr' // Linux
              // bat 'dir' //windows
             }

@@ -17,7 +17,7 @@ parameters { string(name: 'BranchName', defaultValue: 'master', description: 'En
         stage('Git checkout'){
             steps{
                 git branch: 'BranchName', changelog: false, credentialsId: 'devops-coding-credentials', poll: false, url: 'https://github.com/Dadah3227/devops-coding.git'
-                sh 'ls -ltr' // Linux
+                sh 'ls -ltr' // linux shell script
              // bat 'dir' //windows
             }
         }

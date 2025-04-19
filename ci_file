@@ -1,4 +1,4 @@
-ipeline {
+pipeline {
     agent any
 
 parameters { string(name: 'BranchName', defaultValue: 'master', description: 'Enter a branch name') }

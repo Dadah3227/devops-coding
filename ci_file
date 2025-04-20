@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-parameters { string(name: 'Branch_Name', defaultValue: 'master', description: 'Enter your branch name to build') }
+    parameters { string(name: 'Branch_Name', defaultValue: 'master', description: 'Enter your branch name to build') }
 
     stages {
         stage('Hello') {
@@ -17,14 +17,6 @@ parameters { string(name: 'Branch_Name', defaultValue: 'master', description: 'E
         stage('Git checkout'){
             steps{
                 git branch: '$Branch_Name', changelog: false, credentialsId: 'Dadah_git-cred', poll: false, url: 'https://github.com/Dadah3227/devops-coding.git'
-            }
-        }
-        stage('run on condition'{       //adding a stage
-            when {
-                $Branch_Name=='master'
-            }
-            steps{
-                echo 'hey, I am on main branch'
             }
         }
     }

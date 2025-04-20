@@ -25,5 +25,9 @@ pipeline {
                 $Branch_Name=='master'
                }
             }
+            steps{
+                echo 'Hey, I am main branch...'
+            }
         }
     }
+}

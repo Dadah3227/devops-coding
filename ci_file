@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Git checkout'){
             steps{
-                git branch: '$Branch_Name', changelog: false, credentialsId: 'Dadah_git-cred', poll: false, url: 'https://github.com/Dadah3227/devops-coding.git'
+                git branch: 'Branch_Name', changelog: false, credentialsId: 'dadah-git-cred', poll: false, url: 'https://github.com/Dadah3227/devops-coding.git'
             }
         }
         stage('run on condition'){

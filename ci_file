@@ -19,5 +19,11 @@ pipeline {
                 git branch: '$Branch_Name', changelog: false, credentialsId: 'Dadah_git-cred', poll: false, url: 'https://github.com/Dadah3227/devops-coding.git'
             }
         }
+        stage('run on condition'){
+            when {
+                expression{
+                $Branch_Name=='master'
+               }
+            }
+        }
     }
-}

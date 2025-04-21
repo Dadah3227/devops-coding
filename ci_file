@@ -29,8 +29,14 @@ pipeline {
                 echo 'Hey, I am main branch...'
             }
         }
+        stage('pull scm from git'){
+            steps{
+                echo 'new push in github'
+            }
+        }
+
     } // stage ending
-    post {
+    post {      // Note: this post stage is always added after the last stage
            always {
                 echo 'I will always say hello'
         }

@@ -22,12 +22,17 @@ pipeline {
         stage('run on condition'){
             when {
                 expression{
-                env.Branch_Name=='master'
+                env.Branch_Name=='master' // only on branch 'master it will build. NOT any other branch'
                }
             }
             steps{
                 echo 'Hey, I am main branch...'
             }
         }
+    } // stage ending
+    post {
+           always {
+                echo 'I will always say hello'
+        }
     }
-}
+} // pipeline ending

@@ -1,0 +1,18 @@
+pipeline{
+    agent any
+
+    stages {
+        stages('Github checkout){
+            steps{
+
+            }
+
+        }
+
+    }
+
+
+
+
+
+}

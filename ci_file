@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Hi'){
             steps{
-                echo 'Hi'
+                echo 'Hi, my name is Isaac Dadah Wolofar'
             }
         }
         stage('Git checkout'){

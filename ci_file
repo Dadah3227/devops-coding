@@ -26,7 +26,7 @@ pipeline {
                }
             }
             steps{
-                echo 'Hey, I am main branch...'
+                echo 'Hey, I am main branch...and there's another branch called dev that is feature branch'
             }
         }
         stage('pull scm from git'){
